@@ -1,19 +1,7 @@
-import type { EstimateData, EstimateResult } from "./types"
+import type { EstimateData, EstimateResult } from "./lib/types"
+import { REGIONAL_MULTIPLIERS } from "./constants"
 
 // Multiplicadores de costo por región (Paint Power sirve NYC, Hudson Valley, y más)
-const REGIONAL_MULTIPLIERS: Record<string, number> = {
-  "nyc-manhattan": 1.40,
-  "brooklyn": 1.35,
-  "queens": 1.30,
-  "bronx": 1.25,
-  "westchester": 1.20,
-  "hudson-valley": 1.15,
-  "upstate": 1.05,
-  "midwest": 0.90,
-  "south": 0.85,
-  "west": 0.95,
-}
-
 const FIXTURE_COSTS = {
   toilet: {
     budget: 150,

@@ -3,7 +3,7 @@ const { parse } = require('url');
 const next = require('next');
 
 // Ejecutable en Plesk/Passenger: escuchamos en process.env.PORT y en todas las interfaces
-const dev = process.env.NODE_ENV !== 'production';
+const dev = process.env.NODE_ENV === 'development';
 const port = parseInt(process.env.PORT, 10) || 3000; // Passenger/ Plesk inyectan PORT
 const host = process.env.HOST || '0.0.0.0'; // escuchar en todas las interfaces para accesibilidad externa
 

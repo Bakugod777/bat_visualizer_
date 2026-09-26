@@ -81,6 +81,7 @@ export interface EstimateData {
 
 export interface EstimateResult {
   total: number
+  regionMultiplier?: number
   breakdown: {
     fixtures: number
     materials: number

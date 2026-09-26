@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card"
 import { DollarSign, TrendingUp, MapPin } from "lucide-react"
 import { calculateEstimate } from "@/lib/calculate-estimate"
 import type { EstimateData, RenovationItems } from "@/lib/types"
-import { REGIONAL_LABELS } from "@/lib/constants" // Necesario crear
+import { REGIONAL_LABELS, REGIONAL_MULTIPLIERS } from "@/constants"
 
 interface EstimatePreviewProps {
   estimateData: EstimateData
@@ -32,8 +32,9 @@ export function EstimatePreview({
     minimumFractionDigits: 0,
   })
 
-  const regionLabel = REGIONAL_LABELS[estimateData.labor?.region || "midwest"] || "Your Region"
-  const regionMultiplier = (estimateData.labor?.region || "midwest") // Se obtendría del resultado mejorado
+  const selectedRegion = estimateData.labor?.region || "midwest"
+  const regionLabel = REGIONAL_LABELS[selectedRegion] || "Your Region"
+  const regionMultiplier = REGIONAL_MULTIPLIERS[selectedRegion] ?? 1
 
   return (
     <Card className={`sticky top-4 bg-gradient-to-br from-primary/5 to-transparent border-primary/20 ${className}`}>

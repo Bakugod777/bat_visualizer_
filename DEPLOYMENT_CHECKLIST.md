@@ -65,6 +65,17 @@ NEXT_PUBLIC_BUSINESS_EMAIL=...@paintpower.net
 - [ ] Build command: `npm run build` (default)
 - [ ] Start command: `npm run start` (default)
 
+### Plesk Deployment (Node.js / Passenger)
+- [ ] Confirm the hosting plan has the Plesk Node.js extension enabled
+- [ ] Select Node.js 22 LTS (the project supports Node.js 20.9 through 22.x)
+- [ ] Set the application root to the repository/project root
+- [ ] Set the startup file to `app.js`
+- [ ] Set `NODE_ENV` to `production` in the Plesk Node.js settings
+- [ ] Install dependencies from the application root with `npm ci --include=dev`
+- [ ] Build the Next.js production output with `npm run build`
+- [ ] Restart the Node.js application from Plesk
+- [ ] Open the domain over HTTPS and verify the home page, estimator, and static images
+
 ### Alternative Hosting (Hostinger, AWS, etc)
 - [ ] Server meets Node.js 18+ requirement
 - [ ] Port 3000 available (or configured)

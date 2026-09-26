@@ -15,6 +15,19 @@ export const REGIONAL_LABELS: Record<string, string> = {
   "west": "West Coast",
 }
 
+export const REGIONAL_MULTIPLIERS: Record<string, number> = {
+  "nyc-manhattan": 1.4,
+  "brooklyn": 1.35,
+  "queens": 1.3,
+  "bronx": 1.25,
+  "westchester": 1.2,
+  "hudson-valley": 1.15,
+  "upstate": 1.05,
+  "midwest": 0.9,
+  "south": 0.85,
+  "west": 0.95,
+}
+
 export const REGIONS = [
   { id: "nyc-manhattan", label: "Manhattan, NYC", note: "+40% premium pricing" },
   { id: "brooklyn", label: "Brooklyn, NYC", note: "+35% premium pricing" },
