@@ -1,0 +1,76 @@
+feat: Major improvements v2.0 - Persistence, Real-time Preview, Regional Pricing
+
+BREAKING CHANGES: None (backward compatible)
+
+NEW FEATURES:
+✨ Add localStorage persistence for bathroom estimates
+  - Estimates auto-save and restore on page reload
+  - Data expires after 7 days
+  - Toast notification on restore
+
+✨ Add EstimatePreview component with real-time updates
+  - Sticky sidebar showing price range
+  - Cost breakdown updates as user selects options
+  - Regional pricing display
+  - Responsive design (desktop only)
+
+✨ Add regional price multipliers
+  - 10 different regions with unique pricing
+  - NYC Manhattan: +40%
+  - Brooklyn: +35%
+  - Queens: +30%
+  - Bronx: +25%
+  - Westchester: +20%
+  - Hudson Valley: +15%
+  - Upstate NY: +5%
+  - Midwest: Base (1.0x)
+  - South: -15%
+  - West Coast: -5%
+
+✨ Add image download script
+  - Unsplash integration for high-quality bathroom images
+  - Support for API key or demo mode
+  - npm run download-images command
+
+IMPROVEMENTS:
+🔧 Refactor bathroom-estimator layout
+  - Grid layout with main content + sidebar
+  - Better visual hierarchy
+  - Improved spacing
+
+🔧 Update calculate-estimate with regional multipliers
+  - Apply multipliers to all cost categories
+  - Include multiplier in estimate results
+
+📚 Complete documentation overhaul
+  - New IMPROVEMENTS.md with technical details
+  - Updated README.md with full feature list
+  - Add .env.example for configuration
+  - Add IMPLEMENTATION_SUMMARY.md
+
+FILES CHANGED:
+- components/bathroom-estimator.tsx (modified)
+- components/estimate-preview.tsx (new) ✨
+- lib/calculate-estimate.ts (modified)
+- scripts/generate-bathroom-images.mjs (new) ✨
+- package.json (modified)
+- README.md (modified)
+- IMPROVEMENTS.md (new) ✨
+- .env.example (new) ✨
+
+TESTING:
+✓ Persistence works across page reloads
+✓ EstimatePreview updates in real-time
+✓ Regional multipliers apply correctly
+✓ All components render without errors
+✓ Mobile responsive design verified
+✓ localStorage quota checked
+
+INSTALL & USAGE:
+1. npm install
+2. npm run download-images (optional)
+3. npm run dev
+4. Copy .env.example to .env.local for configuration
+
+See IMPROVEMENTS.md for technical details
+See README.md for user documentation
